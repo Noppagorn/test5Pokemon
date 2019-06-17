@@ -8,4 +8,5 @@ import com.company.test5pokemon.entity.Trainer;
 @LookupComponent("trainersTable")
 @LoadDataBeforeShow
 public class TrainerBrowse extends StandardLookup<Trainer> {
+
 }

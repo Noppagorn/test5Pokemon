@@ -19,6 +19,19 @@ public class Pokemon extends StandardEntity {
     @JoinColumn(name = "TYPE_ID")
     protected Type type;
 
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "TRAIN_ID")
+    protected Trainer train;
+
+    public Trainer getTrain() {
+        return train;
+    }
+
+    public void setTrain(Trainer train) {
+        this.train = train;
+    }
+
     public Type getType() {
         return type;
     }

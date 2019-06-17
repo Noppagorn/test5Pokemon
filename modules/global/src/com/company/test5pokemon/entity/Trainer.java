@@ -1,10 +1,14 @@
 package com.company.test5pokemon.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|name")
 @Table(name = "TEST5POKEMON_TRAINER")
 @Entity(name = "test5pokemon_Trainer")
 public class Trainer extends StandardEntity {
@@ -16,19 +20,6 @@ public class Trainer extends StandardEntity {
 
     @Column(name = "AMOUNT")
     protected Integer amount;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "POKEMON_ID")
-    protected Pokemon pokemon;
-
-    public Pokemon getPokemon() {
-        return pokemon;
-    }
-
-    public void setPokemon(Pokemon pokemon) {
-        this.pokemon = pokemon;
-    }
 
     public Integer getAmount() {
         return amount;

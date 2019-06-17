@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-test5pokemon" insertBefore="administration">
+        <item screen="test5pokemon_Pokemon.browse"/>
+        <item screen="test5pokemon_Type.browse"/>
+        <item screen="test5pokemon_Trainer.browse"/>
     </menu>
 </menu-config>

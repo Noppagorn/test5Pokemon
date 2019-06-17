@@ -11,7 +11,6 @@ create table TEST5POKEMON_TRAINER (
     --
     NAME varchar(255) not null,
     AMOUNT integer,
-    POKEMON_ID varchar(36) not null,
     --
     primary key (ID)
 )^
@@ -45,6 +44,7 @@ create table TEST5POKEMON_POKEMON (
     --
     NAME varchar(255) not null,
     TYPE_ID varchar(36) not null,
+    TRAIN_ID varchar(36) not null,
     --
     primary key (ID)
 )^

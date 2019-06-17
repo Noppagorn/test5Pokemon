@@ -1,5 +1,6 @@
 package com.company.test5pokemon.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|typeName")
 @Table(name = "TEST5POKEMON_TYPE")
 @Entity(name = "test5pokemon_Type")
 public class Type extends StandardEntity {
