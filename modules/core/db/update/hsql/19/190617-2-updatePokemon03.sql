@@ -1,0 +1,4 @@
+alter table TEST5POKEMON_POKEMON alter column TRAIN_ID rename to TRAIN_ID__U88942 ^
+drop index IDX_TEST5POKEMON_POKEMON_ON_TRAIN ;
+alter table TEST5POKEMON_POKEMON drop constraint FK_TEST5POKEMON_POKEMON_ON_TRAIN ;
+alter table TEST5POKEMON_POKEMON add column TRAINER_ID varchar(36) ;

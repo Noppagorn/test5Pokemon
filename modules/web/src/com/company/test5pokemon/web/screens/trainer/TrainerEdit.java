@@ -8,5 +8,4 @@ import com.company.test5pokemon.entity.Trainer;
 @EditedEntityContainer("trainerDc")
 @LoadDataBeforeShow
 public class TrainerEdit extends StandardEditor<Trainer> {
-
 }

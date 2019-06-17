@@ -23,29 +23,39 @@
                 dataLoader="trainersDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="trainersTable"
-                    width="100%"
-                    dataContainer="trainersDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="name"/>
-                <column id="amount"/>
-            </columns>
-            <rowsCount/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="trainersTable.create"/>
-                <button id="editBtn" action="trainersTable.edit"/>
-                <button id="removeBtn" action="trainersTable.remove"/>
-            </buttonsPanel>
-        </groupTable>
+        
+<groupTable id="trainersTable"
+        width="100%"
+        dataContainer="trainersDc">
+    <actions>
+        <action id="create" type="create"/>
+    
+        <action id="edit" type="edit"/>
+    
+        <action id="remove" type="remove"/>
+    
+    </actions>
+    <columns>
+        <column id="name"/>
+    
+        <column id="amount"/>
+    
+    </columns>
+    <rowsCount/>
+    <buttonsPanel id="buttonsPanel"
+                  alwaysVisible="true">
+        
+            <button id="createBtn" action="trainersTable.create"/>                
+        
+            <button id="editBtn" action="trainersTable.edit"/>                
+        
+            <button id="removeBtn" action="trainersTable.remove"/>                
+        
+    </buttonsPanel>
+</groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-    </layout>
+    </layout>                
 </window>
