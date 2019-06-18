@@ -23,9 +23,11 @@
 	
 	<textField id="nameField" property="name"/>
 	
-	<textField id="lifePointField" property="lifePoint"/>
+	<textField id="lifePointDefaultField" property="lifePointDefault"/>
 	
-	<textField id="atkField" property="atk"/>
+	<textField id="atkDefaultField" property="atkDefault"/>
+	
+	<textField id="defDefaultField" property="defDefault"/>
 	
 </column>
 </form>

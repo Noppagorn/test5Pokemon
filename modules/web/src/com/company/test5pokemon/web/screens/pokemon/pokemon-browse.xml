@@ -38,9 +38,11 @@
     <columns>
         <column id="name"/>
     
-        <column id="lifePoint"/>
+        <column id="lifePointDefault"/>
     
-        <column id="atk"/>
+        <column id="atkDefault"/>
+    
+        <column id="defDefault"/>
     
     </columns>
     <rowsCount/>
