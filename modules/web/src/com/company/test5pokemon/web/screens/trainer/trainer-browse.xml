@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="trainersTable"
+        messagesPack="com.company.test5pokemon.web.screens.trainer">
+    <data readOnly="true">
+        <collection id="trainersDc"
+                    class="com.company.test5pokemon.entity.Trainer"
+                    view="_local">
+            <loader id="trainersDl">
+                <query>
+                    <![CDATA[select e from test5pokemon_Trainer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="trainersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="trainersTable"
+                dataLoader="trainersDl">
+            <properties include=".*"/>
+        </filter>
+        
+<groupTable id="trainersTable"
+        width="100%"
+        dataContainer="trainersDc">
+    <actions>
+        <action id="create" type="create"/>
+    
+        <action id="edit" type="edit"/>
+    
+        <action id="remove" type="remove"/>
+    
+    </actions>
+    <columns>
+        <column id="name"/>
+    
+        <column id="money"/>
+    
+    </columns>
+    <rowsCount/>
+    <buttonsPanel id="buttonsPanel"
+                  alwaysVisible="true">
+        
+            <button id="createBtn" action="trainersTable.create"/>                
+        
+            <button id="editBtn" action="trainersTable.edit"/>                
+        
+            <button id="removeBtn" action="trainersTable.remove"/>                
+        
+    </buttonsPanel>
+</groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>                
+</window>

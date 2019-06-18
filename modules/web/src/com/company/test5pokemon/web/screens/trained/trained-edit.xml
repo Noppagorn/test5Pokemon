@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.test5pokemon.web.screens.trained">
+    <data>
+        <instance id="trainedDc"
+                    class="com.company.test5pokemon.entity.Trained"
+                    view="trained-view">
+            <loader/>
+        </instance>
+        
+                <collection id="trainersDc" class="com.company.test5pokemon.entity.Trainer" view="_minimal">
+                    <loader id="trainersLc">
+                        <query>
+                            <![CDATA[select e from test5pokemon_Trainer e]]>
+                        </query>
+                    </loader>
+                </collection>
+        
+                <collection id="pokemonsDc" class="com.company.test5pokemon.entity.Pokemon" view="_minimal">
+                    <loader id="pokemonsLc">
+                        <query>
+                            <![CDATA[select e from test5pokemon_Pokemon_1 e]]>
+                        </query>
+                    </loader>
+                </collection>
+        
+    </data>
+    
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+    
+        
+
+<form id="form" dataContainer="trainedDc">
+<column width="250px">
+	
+	<textField id="amountField" property="amount"/>
+	
+	<lookupPickerField id="trainerField" optionsContainer="trainersDc" property="trainer">
+		<actions><action id="lookup" type="picker_lookup"/></actions>
+	</lookupPickerField>
+	
+	<lookupPickerField id="pokemonField" optionsContainer="pokemonsDc" property="pokemon">
+		<actions><action id="lookup" type="picker_lookup"/></actions>
+	</lookupPickerField>
+	
+	<textField id="lifePointField" property="lifePoint"/>
+	
+	<textField id="atkField" property="atk"/>
+	
+	<textField id="defField" property="def"/>
+	
+</column>
+</form>
+
+        
+        
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
