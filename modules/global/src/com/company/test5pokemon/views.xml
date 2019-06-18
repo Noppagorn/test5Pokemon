@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
-    <view entity="test5pokemon_Pokemon" name="pokemon-with-type-and-trainer" extends="_local">
-        <property name="type" view="_minimal"/>
+    <view entity="test5pokemon_Pokemon" name="trained-view" extends="_local">
         <property name="trainer" view="_minimal"/>
+        <property name="pokemon" view="_minimal">
+            <property name="name"/>
+            <property name="type" view="_minimal"/>
+            <property name="lifePointDefault"/>
+            <property name="atkDefault"/>
+            <property name="defDefault"/>
+        </property>
     </view>
 </views>

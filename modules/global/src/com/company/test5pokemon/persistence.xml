@@ -2,8 +2,9 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="test5_pokemon" transaction-type="RESOURCE_LOCAL">
 
-        <class>com.company.test5pokemon.entity.Pokemon</class>
+        <class>com.company.test5pokemon.entity.Trained</class>
         <class>com.company.test5pokemon.entity.Type</class>
         <class>com.company.test5pokemon.entity.Trainer</class>
+        <class>com.company.test5pokemon.entity.Pokemon</class>
     </persistence-unit>
 </persistence>

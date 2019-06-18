@@ -23,47 +23,33 @@
                 dataLoader="trainedsDl">
             <properties include=".*"/>
         </filter>
-        
-<groupTable id="trainedsTable"
-        width="100%"
-        dataContainer="trainedsDc">
-    <actions>
-        <action id="create" type="create"/>
-    
-        <action id="edit" type="edit"/>
-    
-        <action id="remove" type="remove"/>
-    
-    </actions>
-    <columns>
-        <column id="amount"/>
-    
-        <column id="trainer"/>
-    
-        <column id="pokemon"/>
-    
-        <column id="lifePoint"/>
-    
-        <column id="atk"/>
-    
-        <column id="def"/>
-    
-    </columns>
-    <rowsCount/>
-    <buttonsPanel id="buttonsPanel"
-                  alwaysVisible="true">
-        
-            <button id="createBtn" action="trainedsTable.create"/>                
-        
-            <button id="editBtn" action="trainedsTable.edit"/>                
-        
-            <button id="removeBtn" action="trainedsTable.remove"/>                
-        
-    </buttonsPanel>
-</groupTable>
+        <groupTable id="trainedsTable"
+                    width="100%"
+                    dataContainer="trainedsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="amount"/>
+                <column id="trainer"/>
+                <column id="pokemon"/>
+                <column id="lifePoint"/>
+                <column id="atk"/>
+                <column id="def"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="trainedsTable.create"/>
+                <button id="editBtn" action="trainedsTable.edit"/>
+                <button id="removeBtn" action="trainedsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-    </layout>                
+    </layout>
 </window>

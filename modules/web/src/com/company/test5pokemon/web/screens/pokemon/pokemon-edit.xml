@@ -5,35 +5,22 @@
         messagesPack="com.company.test5pokemon.web.screens.pokemon">
     <data>
         <instance id="pokemonDc"
-                    class="com.company.test5pokemon.entity.Pokemon"
-                    view="_local">
+                  class="com.company.test5pokemon.entity.Pokemon"
+                  view="_local">
             <loader/>
         </instance>
-        
     </data>
-    
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-    
-        
-
-<form id="form" dataContainer="pokemonDc">
-<column width="250px">
-	
-	<textField id="nameField" property="name"/>
-	
-	<textField id="lifePointDefaultField" property="lifePointDefault"/>
-	
-	<textField id="atkDefaultField" property="atkDefault"/>
-	
-	<textField id="defDefaultField" property="defDefault"/>
-	
-</column>
-</form>
-
-        
-        
+        <form id="form" dataContainer="pokemonDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="lifePointDefaultField" property="lifePointDefault"/>
+                <textField id="atkDefaultField" property="atkDefault"/>
+                <textField id="defDefaultField" property="defDefault"/>
+            </column>
+        </form>
         <hbox id="editActions" spacing="true">
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>

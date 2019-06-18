@@ -5,31 +5,20 @@
         messagesPack="com.company.test5pokemon.web.screens.trainer">
     <data>
         <instance id="trainerDc"
-                    class="com.company.test5pokemon.entity.Trainer"
-                    view="_local">
+                  class="com.company.test5pokemon.entity.Trainer"
+                  view="_local">
             <loader/>
         </instance>
-        
     </data>
-    
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-    
-        
-
-<form id="form" dataContainer="trainerDc">
-<column width="250px">
-	
-	<textField id="nameField" property="name"/>
-	
-	<textField id="moneyField" property="money"/>
-	
-</column>
-</form>
-
-        
-        
+        <form id="form" dataContainer="trainerDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="moneyField" property="money"/>
+            </column>
+        </form>
         <hbox id="editActions" spacing="true">
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>

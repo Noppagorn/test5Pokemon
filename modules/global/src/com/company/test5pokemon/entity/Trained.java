@@ -10,45 +10,63 @@ import java.math.BigDecimal;
 
 @Table(name = "TEST5POKEMON_POKEMON")
 @Entity(name = "test5pokemon_Pokemon")
-public class Pokemon extends StandardEntity {
+public class Trained extends StandardEntity {
     private static final long serialVersionUID = -5896521531682707850L;
 
-    @NotNull
-    @Column(name = "NAME", nullable = false)
-    protected String name;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "TYPE_ID")
-    protected Type type;
+    @Column(name = "AMOUNT", nullable = false)
+    protected BigDecimal amount;
 
     @Lookup(type = LookupType.DROPDOWN, actions = {"lookup"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TRAINER_ID")
     protected Trainer trainer;
 
+    @Lookup(type = LookupType.DROPDOWN, actions = {"lookup"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "POKEMON_ID")
+    protected Pokemon pokemon;
+
     @NotNull
     @Column(name = "LIFE_POINT", nullable = false)
     protected BigDecimal lifePoint;
 
     @NotNull
-    @Column(name = "ATTACK_POINT", nullable = false)
-    protected BigDecimal attackPoint;
+    @Column(name = "ATK", nullable = false)
+    protected BigDecimal atk;
 
-    public BigDecimal getAttackPoint() {
-        return attackPoint;
+    @NotNull
+    @Column(name = "DEF", nullable = false)
+    protected BigDecimal def;
+
+    public BigDecimal getDef() { return def; }
+
+    public void setDef(BigDecimal def) { this.def = def; }
+
+    public BigDecimal getAtk() { return atk; }
+
+    public void setAtk(BigDecimal atk) { this.atk = atk; }
+
+    public BigDecimal getLifePoint() { return lifePoint; }
+
+    public void setLifePoint(BigDecimal lifePoint) { this.lifePoint = lifePoint; }
+
+    public Pokemon getPokemon() {
+        return pokemon;
     }
 
-    public void setAttackPoint(BigDecimal attackPoint) {
-        this.attackPoint = attackPoint;
+    public void setPokemon(Pokemon pokemon) {
+        this.pokemon = pokemon;
     }
 
-    public BigDecimal getLifePoint() {
-        return lifePoint;
+
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setLifePoint(BigDecimal lifePoint) {
-        this.lifePoint = lifePoint;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public Trainer getTrainer() {
@@ -59,19 +77,4 @@ public class Pokemon extends StandardEntity {
         this.trainer = trainer;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

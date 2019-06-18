@@ -4,5 +4,6 @@
         <item screen="test5pokemon_Pokemon.browse"/>
         <item screen="test5pokemon_Type.browse"/>
         <item screen="test5pokemon_Trainer.browse"/>
+        <item screen="test5pokemon_Pokemon_1.browse"/>
     </menu>
 </menu-config>
