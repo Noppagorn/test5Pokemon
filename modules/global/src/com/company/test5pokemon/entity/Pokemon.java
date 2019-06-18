@@ -1,6 +1,8 @@
 package com.company.test5pokemon.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.Lookup;
+import com.haulmont.cuba.core.entity.annotation.LookupType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,17 +21,17 @@ public class Pokemon extends StandardEntity {
     @JoinColumn(name = "TYPE_ID")
     protected Type type;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "TRAIN_ID")
-    protected Trainer train;
+    @Lookup(type = LookupType.DROPDOWN, actions = {"lookup"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRAINER_ID")
+    protected Trainer trainer;
 
-    public Trainer getTrain() {
-        return train;
+    public Trainer getTrainer() {
+        return trainer;
     }
 
-    public void setTrain(Trainer train) {
-        this.train = train;
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 
     public Type getType() {

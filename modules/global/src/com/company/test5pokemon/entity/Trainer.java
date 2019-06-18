@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @NamePattern("%s|name")
 @Table(name = "TEST5POKEMON_TRAINER")
@@ -18,16 +19,13 @@ public class Trainer extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     protected String name;
 
-    @Column(name = "AMOUNT")
-    protected Integer amount;
+    @NotNull
+    @Column(name = "MONEY", nullable = false)
+    protected BigDecimal money;
 
-    public Integer getAmount() {
-        return amount;
-    }
+    public BigDecimal getMoney() { return money; }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+    public void setMoney(BigDecimal money) { this.money = money; }
 
     public String getName() { return name; }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
-    <view entity="test5pokemon_Pokemon" name="pokemon-with-trainer" extends="_local">
+    <view entity="test5pokemon_Pokemon" name="pokemon-with-type-and-trainer" extends="_local">
         <property name="type" view="_minimal"/>
-        <property name="train" view="_minimal"/>
+        <property name="trainer" view="_minimal"/>
     </view>
 </views>

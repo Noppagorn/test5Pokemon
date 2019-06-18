@@ -10,7 +10,7 @@ create table TEST5POKEMON_TRAINER (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
-    AMOUNT integer,
+    MONEY decimal(19, 2) not null,
     --
     primary key (ID)
 )^
@@ -44,7 +44,7 @@ create table TEST5POKEMON_POKEMON (
     --
     NAME varchar(255) not null,
     TYPE_ID varchar(36) not null,
-    TRAIN_ID varchar(36) not null,
+    TRAINER_ID varchar(36),
     --
     primary key (ID)
 )^
