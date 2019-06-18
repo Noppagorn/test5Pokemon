@@ -5,5 +5,5 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import javax.persistence.Entity;
 
 @Entity
-public class Pokemon extends StandardEntity {
+public class TrainedLine extends StandardEntity {
 }
