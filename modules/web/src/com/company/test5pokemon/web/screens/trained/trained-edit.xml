@@ -7,7 +7,7 @@
         <instance id="trainedDc"
                   class="com.company.test5pokemon.entity.Trained"
                   view="trained-view">
-            <loader/>
+            <loader id="trainedDl"/>
         </instance>
         <collection id="trainersDc" class="com.company.test5pokemon.entity.Trainer" view="_minimal">
             <loader id="trainersLc">
@@ -16,7 +16,7 @@
                 </query>
             </loader>
         </collection>
-        <collection id="pokemonsDc" class="com.company.test5pokemon.entity.Pokemon" view="_minimal">
+        <collection id="pokemonsDc" class="com.company.test5pokemon.entity.Pokemon" view="pokemon-view">
             <loader id="pokemonsLc">
                 <query>
                     <![CDATA[select e from test5pokemon_Pokemon_1 e]]>
@@ -40,9 +40,9 @@
                         <action id="lookup" type="picker_lookup"/>
                     </actions>
                 </lookupPickerField>
-                <textField id="lifePointField" property="lifePoint"/>
-                <textField id="atkField" property="atk"/>
-                <textField id="defField" property="def"/>
+                <textField id="lifePointField" property="lifePoint" editable="false"/>
+                <textField id="atkField" property="atk" editable="false"/>
+                <textField id="defField" property="def" editable="false"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

@@ -11,4 +11,7 @@
             <property name="defDefault"/>
         </property>
     </view>
+    <view entity="test5pokemon_Pokemon_1" name="pokemon-view" extends="_local">
+        <property name="type" view="_minimal"/>
+    </view>
 </views>
