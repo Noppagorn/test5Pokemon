@@ -40,7 +40,8 @@
                         <action id="lookup" type="picker_lookup"/>
                     </actions>
                 </lookupPickerField>
-                <textField id="lifePointField" property="lifePoint" editable="false"/>
+                <textField id="lifePointField" property="lifePoint" editable="false"
+                           align="TOP_LEFT" inputPrompt="98"/>
                 <textField id="atkField" property="atk" editable="false"/>
                 <textField id="defField" property="def" editable="false"/>
             </column>
