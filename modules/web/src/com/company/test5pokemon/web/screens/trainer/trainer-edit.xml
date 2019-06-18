@@ -2,10 +2,10 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         caption="msg://editorCaption"
         focusComponent="form"
-        messagesPack="com.company.test5pokemon.web.screens.type">
+        messagesPack="com.company.test5pokemon.web.screens.trainer">
     <data>
-        <instance id="typeDc"
-                    class="com.company.test5pokemon.entity.Type"
+        <instance id="trainerDc"
+                    class="com.company.test5pokemon.entity.Trainer"
                     view="_local">
             <loader/>
         </instance>
@@ -18,10 +18,12 @@
     
         
 
-<form id="form" dataContainer="typeDc">
+<form id="form" dataContainer="trainerDc">
 <column width="250px">
 	
-	<textField id="typeNameField" property="typeName"/>
+	<textField id="nameField" property="name"/>
+	
+	<textField id="moneyField" property="money"/>
 	
 </column>
 </form>

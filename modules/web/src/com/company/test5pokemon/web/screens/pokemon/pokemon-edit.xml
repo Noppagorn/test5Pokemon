@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.test5pokemon.web.screens.pokemon">
+    <data>
+        <instance id="pokemonDc"
+                    class="com.company.test5pokemon.entity.Pokemon"
+                    view="pokemon-with-type-and-trainer">
+            <loader/>
+        </instance>
+        
+                <collection id="trainersDc" class="com.company.test5pokemon.entity.Trainer" view="_minimal">
+                    <loader id="trainersLc">
+                        <query>
+                            <![CDATA[select e from test5pokemon_Trainer e]]>
+                        </query>
+                    </loader>
+                </collection>
+        
+    </data>
+    
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+    
+        
+
+<form id="form" dataContainer="pokemonDc">
+<column width="250px">
+	
+	<textField id="nameField" property="name"/>
+	
+	<pickerField id="typeField" property="type">
+		<actions><action id="lookup" type="picker_lookup"/><action id="clear" type="picker_clear"/></actions>
+	</pickerField>
+	
+	<lookupPickerField id="trainerField" optionsContainer="trainersDc" property="trainer">
+		<actions><action id="lookup" type="picker_lookup"/></actions>
+	</lookupPickerField>
+	
+</column>
+</form>
+
+        
+        
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

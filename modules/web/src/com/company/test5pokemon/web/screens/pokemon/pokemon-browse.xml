@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         caption="msg://browseCaption"
-        focusComponent="typesTable"
-        messagesPack="com.company.test5pokemon.web.screens.type">
+        focusComponent="pokemonsTable"
+        messagesPack="com.company.test5pokemon.web.screens.pokemon">
     <data readOnly="true">
-        <collection id="typesDc"
-                    class="com.company.test5pokemon.entity.Type"
-                    view="_local">
-            <loader id="typesDl">
+        <collection id="pokemonsDc"
+                    class="com.company.test5pokemon.entity.Pokemon"
+                    view="pokemon-with-type-and-trainer">
+            <loader id="pokemonsDl">
                 <query>
-                    <![CDATA[select e from test5pokemon_Type e]]>
+                    <![CDATA[select e from test5pokemon_Pokemon e]]>
                 </query>
             </loader>
         </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="typesTable"
+    <layout expand="pokemonsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="typesTable"
-                dataLoader="typesDl">
+                applyTo="pokemonsTable"
+                dataLoader="pokemonsDl">
             <properties include=".*"/>
         </filter>
         
-<groupTable id="typesTable"
+<groupTable id="pokemonsTable"
         width="100%"
-        dataContainer="typesDc">
+        dataContainer="pokemonsDc">
     <actions>
         <action id="create" type="create"/>
     
@@ -36,18 +36,22 @@
     
     </actions>
     <columns>
-        <column id="typeName"/>
+        <column id="name"/>
+    
+        <column id="type"/>
+    
+        <column id="trainer"/>
     
     </columns>
     <rowsCount/>
     <buttonsPanel id="buttonsPanel"
                   alwaysVisible="true">
         
-            <button id="createBtn" action="typesTable.create"/>                
+            <button id="createBtn" action="pokemonsTable.create"/>                
         
-            <button id="editBtn" action="typesTable.edit"/>                
+            <button id="editBtn" action="pokemonsTable.edit"/>                
         
-            <button id="removeBtn" action="typesTable.remove"/>                
+            <button id="removeBtn" action="pokemonsTable.remove"/>                
         
     </buttonsPanel>
 </groupTable>
