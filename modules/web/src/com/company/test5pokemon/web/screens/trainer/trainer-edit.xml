@@ -7,8 +7,14 @@
         <instance id="trainerDc"
                   class="com.company.test5pokemon.entity.Trainer"
                   view="_local">
-            <loader/>
+            <loader id="trainerDl"/>
         </instance>
+        <collection id="trainedsDc" class="com.company.test5pokemon.entity.Trained" view="trained-view">
+            <loader id="trainedsDl">
+                <query><![CDATA[select e from test5pokemon_Pokemon e
+where e.trainer =:trainer]]></query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
@@ -17,6 +23,19 @@
             <column width="250px">
                 <textField id="nameField" property="name"/>
                 <textField id="moneyField" property="money"/>
+                <textField id="trainedsDcField" caption="Amout" editable="false"/>
+                <groupBox caption="Pokemon" width="500px">
+                    <table id="trainedsDcTable" dataContainer="trainedsDc" width="500px">
+                        <columns>
+                            <column id="amount"/>
+                            <column id="pokemon.name" caption="name"/>
+                            <column id="pokemon.type" caption="type"/>
+                            <column id="lifePoint" caption="LifePoint"/>
+                            <column id="atk" caption="ATK"/>
+                            <column id="def" caption="DEF"/>
+                        </columns>
+                    </table>
+                </groupBox>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

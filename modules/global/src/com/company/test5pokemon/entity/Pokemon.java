@@ -25,11 +25,11 @@ public class Pokemon extends StandardEntity {
     protected Type type;
 
     @NotNull
-    @Column(name = "LIFE_POINT", nullable = false)
+    @Column(name = "LIFE_POINT_DEFAULT", nullable = false)
     protected BigDecimal lifePointDefault;
 
     @NotNull
-    @Column(name = "ATK", nullable = false)
+    @Column(name = "ATK_DEFAULT", nullable = false)
     protected BigDecimal atkDefault;
 
     @NotNull

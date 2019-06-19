@@ -6,7 +6,7 @@
     <data readOnly="true">
         <collection id="pokemonsDc"
                     class="com.company.test5pokemon.entity.Pokemon"
-                    view="_local">
+                    view="pokemon-view">
             <loader id="pokemonsDl">
                 <query>
                     <![CDATA[select e from test5pokemon_Pokemon_1 e]]>
@@ -33,6 +33,7 @@
             </actions>
             <columns>
                 <column id="name"/>
+                <column id="type"/>
                 <column id="lifePointDefault"/>
                 <column id="atkDefault"/>
                 <column id="defDefault"/>

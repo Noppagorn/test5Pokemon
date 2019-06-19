@@ -6,9 +6,16 @@
     <data>
         <instance id="pokemonDc"
                   class="com.company.test5pokemon.entity.Pokemon"
-                  view="_local">
+                  view="pokemon-view">
             <loader/>
         </instance>
+        <collection id="typesDc" class="com.company.test5pokemon.entity.Type" view="_minimal">
+            <loader id="typesLc">
+                <query>
+                    <![CDATA[select e from test5pokemon_Type e]]>
+                </query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
@@ -16,6 +23,11 @@
         <form id="form" dataContainer="pokemonDc">
             <column width="250px">
                 <textField id="nameField" property="name"/>
+                <lookupPickerField id="typeField" optionsContainer="typesDc" property="type">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                    </actions>
+                </lookupPickerField>
                 <textField id="lifePointDefaultField" property="lifePointDefault"/>
                 <textField id="atkDefaultField" property="atkDefault"/>
                 <textField id="defDefaultField" property="defDefault"/>
